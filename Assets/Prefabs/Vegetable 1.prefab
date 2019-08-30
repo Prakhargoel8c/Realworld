@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 4348984841757933678}
   - component: {fileID: 2927010852299918077}
   - component: {fileID: 5812731624156257238}
-  - component: {fileID: 3343176354406413629}
   - component: {fileID: 8505124366508354928}
-  m_Layer: 5
+  - component: {fileID: 1150518078}
+  - component: {fileID: 1150518081}
+  m_Layer: 8
   m_Name: Vegetable 1
-  m_TagString: Untagged
+  m_TagString: Vegetable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8962264, g: 0.054957304, b: 0.07869566, a: 1}
+  m_Color: {r: 0.38501248, g: 0.6318727, b: 0.7924528, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -77,19 +78,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!65 &3343176354406413629
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 84298076940027946}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 70.6, y: 68.89, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8505124366508354928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +93,45 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 0, y: 0}
   m_UseGraphicAlpha: 1
+--- !u!61 &1150518078
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84298076940027946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 68.36, y: 67.5}
+  m_EdgeRadius: 0
+--- !u!114 &1150518081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84298076940027946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb2bd3e4899ac4478e4375e9285fcef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vegetable: 
 --- !u!1 &1735992453710212370
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,7 +143,7 @@ GameObject:
   - component: {fileID: 6104594933946041140}
   - component: {fileID: 1507552278292977213}
   - component: {fileID: 2315542787263204278}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,4 +210,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: f
+  m_Text: c

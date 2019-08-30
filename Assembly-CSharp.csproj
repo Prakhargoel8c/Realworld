@@ -62,9 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ChoppingBoard.cs" />
     <Compile Include="Assets\GameConstants.cs" />
     <Compile Include="Assets\Movement.cs" />
+    <Compile Include="Assets\Plate.cs" />
     <Compile Include="Assets\PlayerInteractions.cs" />
+    <Compile Include="Assets\VegetableName.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
