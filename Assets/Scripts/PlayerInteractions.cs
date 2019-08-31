@@ -14,7 +14,7 @@ public class PlayerInteractions : MonoBehaviour
     private TextMesh vegetablesText;
     private TextMesh combinationText;
     private string[] vegetablenames;
-    public GameObject chopindicator;
+    private GameObject chopindicator;
     [HideInInspector]public string combination
     {
         get
@@ -27,11 +27,14 @@ public class PlayerInteractions : MonoBehaviour
         }
         set
         {
-            if(value==null)
+            if (value == null)
             {
                 combinationText.text = "---";
             }
-            combinationText.text = value;
+            else
+            {
+                combinationText.text = value;
+            }
         }
     }
     // Start is called before the first frame update
@@ -71,6 +74,10 @@ public class PlayerInteractions : MonoBehaviour
             if(currentObject.tag=="Plate" && combination==null)
             {
                 currentObject.GetComponent<Plate>().OnInteract(gameObject);
+            }
+            if(currentObject.tag== "Dustbin")
+            {
+                currentObject.GetComponent<Dustbin>().OnInteract(gameObject);
             }
         }
     }

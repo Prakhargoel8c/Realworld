@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - ChoppingBoard
   - Plate
+  - Dustbin
   layers:
   - Default
   - TransparentFX
