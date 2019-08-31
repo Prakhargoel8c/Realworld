@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Plate : MonoBehaviour
 {
+    public GameConstants.Players player;
     // Start is called before the first frame update
     void Start()
     {

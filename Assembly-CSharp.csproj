@@ -62,17 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ChoppingBoard.cs" />
-    <Compile Include="Assets\GameConstants.cs" />
-    <Compile Include="Assets\Movement.cs" />
-    <Compile Include="Assets\Plate.cs" />
-    <Compile Include="Assets\PlayerInteractions.cs" />
-    <Compile Include="Assets\VegetableName.cs" />
+    <Compile Include="Assets\Scripts\ChoppingBoard.cs" />
+    <Compile Include="Assets\Scripts\GameConstants.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Plate.cs" />
+    <Compile Include="Assets\Scripts\PlayerInteractions.cs" />
+    <Compile Include="Assets\Scripts\VegetableName.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
@@ -82,9 +79,6 @@
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
