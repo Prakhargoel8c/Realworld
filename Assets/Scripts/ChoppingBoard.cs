@@ -49,17 +49,17 @@ public class ChoppingBoard : MonoBehaviour
         playerInteractions = playerobject.GetComponent<PlayerInteractions>();
         if (playerInteractions.player==player)//Get vegetable chopped
         {
-            if (playerInteractions.GetVegetable() != null)
+            if (playerInteractions.GetVegetable(0) != null)
             {
                 combination += playerInteractions.RemoveVegetable()+",";
                 playerInteractions.StartCooking();
             }
-            else if(playerInteractions.GetVegetable()==null && playerInteractions.combination==null && combination!=null)//pickup up combo
+            else if(playerInteractions.GetVegetable(0)==null && playerInteractions.combination==null && combination!=null)//pickup up combo
             {
                 playerInteractions.combination = combination;
                 combination = null;
             }
-            else if(playerInteractions.GetVegetable()==null && playerInteractions.combination!=null && combination==null)//place combo on choppingboard
+            else if(playerInteractions.GetVegetable(0)==null && playerInteractions.combination!=null && combination==null)//place combo on choppingboard
             {
                 combination = playerInteractions.combination;
                 playerInteractions.combination = null;

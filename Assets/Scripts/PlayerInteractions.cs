@@ -68,6 +68,10 @@ public class PlayerInteractions : MonoBehaviour
             {
                 currentObject.GetComponent<ChoppingBoard>().OnInteract(gameObject);
             }
+            if(currentObject.tag=="Plate" && combination==null)
+            {
+                currentObject.GetComponent<Plate>().OnInteract(gameObject);
+            }
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -95,15 +99,15 @@ public class PlayerInteractions : MonoBehaviour
             currentObject.GetComponent<Outline>().effectDistance = Vector2.zero;
         }
     }
-    public string GetVegetable()
+    public string GetVegetable(int index)
     {
-        if(vegetablenames[0]==null)
+        if(vegetablenames[index]==null)
         {
             return null;
         }
         else
         {
-            return vegetablenames[0];
+            return vegetablenames[index];
         }
     }
     public bool AddVegetable(string vname)
