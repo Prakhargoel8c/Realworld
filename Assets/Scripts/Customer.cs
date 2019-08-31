@@ -50,11 +50,13 @@ public class Customer : MonoBehaviour
             if(SameCombination(combination,playerInteractions.combination))
             {
                 Debug.Log("correct item");
+                CorrectCombination();
             }
             else
             {
                 Debug.Log("wrong item");
             }
+            playerInteractions.combination = null;
         }
 
     }
@@ -80,6 +82,19 @@ public class Customer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+    private void CorrectCombination()
+    {
+        StartCoroutine(Wait());
+    }
+    IEnumerator Wait()
+    {
+        gameObject.GetComponent<Image>().enabled = false;
+        combination = "";
+        yield return new WaitForSeconds(GameConstants.nextCustomerTime);
+        SetCombination();
+        gameObject.GetComponent<Image>().enabled = true;
         
     }
 }
