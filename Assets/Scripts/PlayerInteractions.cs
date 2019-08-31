@@ -67,17 +67,21 @@ public class PlayerInteractions : MonoBehaviour
                 AddVegetable(name);
                 Debug.Log(name);
             }
-            if(currentObject.tag=="ChoppingBoard")
+            else if(currentObject.tag=="ChoppingBoard")
             {
                 currentObject.GetComponent<ChoppingBoard>().OnInteract(gameObject);
             }
-            if(currentObject.tag=="Plate" && combination==null)
+            else if(currentObject.tag=="Plate" && combination==null)
             {
                 currentObject.GetComponent<Plate>().OnInteract(gameObject);
             }
-            if(currentObject.tag== "Dustbin")
+            else if(currentObject.tag== "Dustbin")
             {
                 currentObject.GetComponent<Dustbin>().OnInteract(gameObject);
+            }
+            else if(currentObject.tag== "Customer"&& combination!=null)
+            {
+                currentObject.GetComponent<Customer>().OnInteract(gameObject);
             }
         }
     }

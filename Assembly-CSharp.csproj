@@ -62,8 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Dustbin.cs" />
     <Compile Include="Assets\Scripts\ChoppingBoard.cs" />
+    <Compile Include="Assets\Scripts\Customer.cs" />
+    <Compile Include="Assets\Scripts\Dustbin.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Plate.cs" />

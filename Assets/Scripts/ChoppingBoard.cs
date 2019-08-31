@@ -51,7 +51,14 @@ public class ChoppingBoard : MonoBehaviour
         {
             if (playerInteractions.GetVegetable(0) != null)
             {
-                combination += playerInteractions.RemoveVegetable()+",";
+                if (combination == null)
+                {
+                    combination = playerInteractions.RemoveVegetable();
+                }
+                else
+                {
+                    combination += ","+playerInteractions.RemoveVegetable() ;
+                }
                 playerInteractions.StartCooking();
             }
             else if(playerInteractions.GetVegetable(0)==null && playerInteractions.combination==null && combination!=null)//pickup up combo
