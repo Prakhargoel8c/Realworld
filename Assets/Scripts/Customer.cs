@@ -8,6 +8,10 @@ public class Customer : MonoBehaviour
 {
     private Text combinationText;
     private PlayerInteractions playerInteractions;
+    private Image Bar;
+    private float CustomerTime;
+    private float TimeLeft;
+    private float currentrate;
     private string combination
     {
         get
@@ -22,13 +26,32 @@ public class Customer : MonoBehaviour
 
     private void Start()
     {
+        combinationText = transform.Find("Image").Find("Text").GetComponent<Text>();
+        CustomerTime = 0f;
+        Bar = transform.Find("Bar").GetComponent<Image>();
+        Bar.fillAmount = 0;
         SetCombination();
     }
-    // Start is called before the first frame update
+    private void Update()
+    {
+        if(TimeLeft>0)
+        {
+            TimeLeft -= Time.deltaTime * currentrate;
+            if(TimeLeft<=0)
+            {
+                TimeUp();
+            }
+            Bar.fillAmount = TimeLeft / CustomerTime;
+        }
+    }
     void SetCombination()
     {
-        combinationText = transform.Find("Image").Find("Text").GetComponent<Text>();
         int noOfItems = UnityEngine.Random.Range(1, GameConstants.maxitems);
+        CustomerTime = noOfItems * GameConstants.ItemTime;
+        TimeLeft = CustomerTime;
+        currentrate = GameConstants.NormalRate;
+        Bar.color = GameConstants.NormalColor;
+        Bar.fillAmount = 1;
         for (int i = 0; i < noOfItems; i++)
         {
             if (combination.Length>0)
@@ -55,6 +78,7 @@ public class Customer : MonoBehaviour
             else
             {
                 Debug.Log("wrong item");
+                WrongItem();
             }
             playerInteractions.combination = null;
         }
@@ -79,12 +103,20 @@ public class Customer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void CorrectCombination()
+    {
+        if(Bar.fillAmount>=0.3)
+        {
+            //playerInteractions.SpawnPickUp();
+        }
+        StartCoroutine(Wait());
+    }
+    private void WrongItem()
+    {
+        currentrate = GameConstants.AngryRate;
+        Bar.color = GameConstants.AngryColor;
+    }
+    private void TimeUp()
     {
         StartCoroutine(Wait());
     }
