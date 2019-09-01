@@ -6,15 +6,18 @@ using UnityEngine.UI;
 public class PlayerInteractions : MonoBehaviour
 {
     public GameConstants.Players player;
+    private GameManager gameManager;
     public Color color;
     private Movement movement;
-    public float interactionDistance = 3f;
+    private float interactionDistance;
     private Collider2D[] collider2D;
     private GameObject currentObject;
     private TextMesh vegetablesText;
     private TextMesh combinationText;
     private string[] vegetablenames;
     private GameObject chopindicator;
+    [HideInInspector]public GameObject UIObject;
+    public UI GetUI;
     [HideInInspector]public string combination
     {
         get
@@ -40,12 +43,17 @@ public class PlayerInteractions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        interactionDistance = GameConstants.activationdistance;
         chopindicator = transform.Find("Chopping Indicator").gameObject;
         movement = GetComponent<Movement>();
         vegetablenames = new string[2];
         vegetablesText = transform.Find("Vegetables").GetComponent<TextMesh>();
         combinationText = transform.Find("Chopped Vegetables").GetComponent<TextMesh>();
         currentObject = null;
+        GetUI = UIObject.GetComponent<UI>();
+        GetUI.SetUi(this);
+        GetUI.SetTime(GameConstants.IntialTime);
+        gameManager = GameObject.Find("GameManger").GetComponent<GameManager>();
     }
     private void OnDrawGizmosSelected()
     {
@@ -165,6 +173,11 @@ public class PlayerInteractions : MonoBehaviour
     public void StartCooking()
     {
         StartCoroutine(Wait());
+    }
+    public void StopPlayer()
+    {
+        movement.canMove = false;
+
     }
     IEnumerator Wait()
     {

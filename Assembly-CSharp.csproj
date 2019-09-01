@@ -66,9 +66,11 @@
     <Compile Include="Assets\Scripts\Customer.cs" />
     <Compile Include="Assets\Scripts\Dustbin.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Plate.cs" />
     <Compile Include="Assets\Scripts\PlayerInteractions.cs" />
+    <Compile Include="Assets\Scripts\UI.cs" />
     <Compile Include="Assets\Scripts\VegetableName.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

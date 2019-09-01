@@ -12,10 +12,12 @@ public class Dustbin : MonoBehaviour
         if(playerInteractions.combination!=null)
         {
             playerInteractions.combination = null;
+            playerInteractions.GetUI.AddScore(GameConstants.combinationtrash);
         }
         else if(playerInteractions.GetVegetable(0)!=null)
         {
             playerInteractions.RemoveVegetable();
+            playerInteractions.GetUI.AddScore(GameConstants.vegetabletrash);
         }
     }
 }

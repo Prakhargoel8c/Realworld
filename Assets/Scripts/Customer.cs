@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
+    private GameManager gameManager;
     private Text combinationText;
     private PlayerInteractions playerInteractions;
     private Image Bar;
     private float CustomerTime;
     private float TimeLeft;
     private float currentrate;
+    private int[] playerwrongcombo;
     private string combination
     {
         get
@@ -31,6 +33,7 @@ public class Customer : MonoBehaviour
         Bar = transform.Find("Bar").GetComponent<Image>();
         Bar.fillAmount = 0;
         SetCombination();
+        gameManager = GameObject.Find("GameManger").GetComponent<GameManager>();
     }
     private void Update()
     {
@@ -46,6 +49,7 @@ public class Customer : MonoBehaviour
     }
     void SetCombination()
     {
+        playerwrongcombo = new int[2] { 0, 0 };
         int noOfItems = UnityEngine.Random.Range(1, GameConstants.maxitems);
         CustomerTime = noOfItems * GameConstants.ItemTime;
         TimeLeft = CustomerTime;
@@ -96,6 +100,7 @@ public class Customer : MonoBehaviour
         if (val1.Equals(val2))
         {
             return true;
+            
         }
         else
         {
@@ -110,14 +115,42 @@ public class Customer : MonoBehaviour
             //playerInteractions.SpawnPickUp();
         }
         StartCoroutine(Wait());
+        playerInteractions.GetUI.AddScore(GameConstants.correctcomboScore);
+        Bar.fillAmount = 0;
+        TimeLeft = 0;
     }
     private void WrongItem()
     {
         currentrate = GameConstants.AngryRate;
         Bar.color = GameConstants.AngryColor;
+        if(playerInteractions.player==GameConstants.Players.Player1)
+        {
+            playerwrongcombo[0] = 1;
+        }
+        else if (playerInteractions.player == GameConstants.Players.Player2)
+        {
+            playerwrongcombo[1] = 1;
+        }
+            playerInteractions.GetUI.AddScore(GameConstants.wrongcomboScore);
     }
     private void TimeUp()
     {
+        if(currentrate==GameConstants.NormalRate)
+        {
+            gameManager.player1.GetComponent<PlayerInteractions>().GetUI.AddScore(GameConstants.normalcustomerleave);
+            gameManager.player2.GetComponent<PlayerInteractions>().GetUI.AddScore(GameConstants.normalcustomerleave);
+        }
+        else
+        {
+            if(playerwrongcombo[0]==1)
+            {
+                gameManager.player1.GetComponent<PlayerInteractions>().GetUI.AddScore(GameConstants.angrycustomerleave);
+            }
+            if(playerwrongcombo[1]==1)
+            {
+                gameManager.player2.GetComponent<PlayerInteractions>().GetUI.AddScore(GameConstants.angrycustomerleave);
+            }
+        }
         StartCoroutine(Wait());
     }
     IEnumerator Wait()
