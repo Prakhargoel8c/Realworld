@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
         if(player1finished==true && player2finished==true)
         {
             SceneManager.LoadScene(1);
+            GameConstants.Player1Score = player1.GetComponent<PlayerInteractions>().GetUI.CurrentScore;
+            GameConstants.Player2Score = player2.GetComponent<PlayerInteractions>().GetUI.CurrentScore;
         }
     }
 

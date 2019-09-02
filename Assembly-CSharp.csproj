@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ResetScene.cs" />
     <Compile Include="Assets\Scripts\ChoppingBoard.cs" />
     <Compile Include="Assets\Scripts\Customer.cs" />
     <Compile Include="Assets\Scripts\Dustbin.cs" />
@@ -72,9 +73,10 @@
     <Compile Include="Assets\Scripts\Plate.cs" />
     <Compile Include="Assets\Scripts\PlayerInteractions.cs" />
     <Compile Include="Assets\Scripts\ScorePowerUp.cs" />
+    <Compile Include="Assets\Scripts\ShowScores.cs" />
+    <Compile Include="Assets\Scripts\TimePoweUp.cs" />
     <Compile Include="Assets\Scripts\UI.cs" />
     <Compile Include="Assets\Scripts\VegetableName.cs" />
-    <Compile Include="Assets\TimePoweUp.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/New folder (3)/RW/salad-chef/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
