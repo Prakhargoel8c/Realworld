@@ -60,11 +60,6 @@ public class PlayerInteractions : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, interactionDistance);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void OnInteract()
     {
         if(currentObject!=null)

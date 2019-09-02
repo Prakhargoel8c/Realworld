@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ResetScene.cs" />
     <Compile Include="Assets\Scripts\ChoppingBoard.cs" />
     <Compile Include="Assets\Scripts\Customer.cs" />
     <Compile Include="Assets\Scripts\Dustbin.cs" />
@@ -72,6 +71,7 @@
     <Compile Include="Assets\Scripts\PickUPSpawner.cs" />
     <Compile Include="Assets\Scripts\Plate.cs" />
     <Compile Include="Assets\Scripts\PlayerInteractions.cs" />
+    <Compile Include="Assets\Scripts\ResetScene.cs" />
     <Compile Include="Assets\Scripts\ScorePowerUp.cs" />
     <Compile Include="Assets\Scripts\ShowScores.cs" />
     <Compile Include="Assets\Scripts\TimePoweUp.cs" />

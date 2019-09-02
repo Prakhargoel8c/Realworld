@@ -110,7 +110,7 @@ public class Customer : MonoBehaviour
 
     private void CorrectCombination()
     {
-        if(Bar.fillAmount>=0.3)
+        if(Bar.fillAmount>=GameConstants.HappyPercent)
         {
             gameManager.PickUPSpawner.GetComponent<PickUPSpawner>().SpawnPickUp(playerInteractions);
         }
