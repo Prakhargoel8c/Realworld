@@ -12,7 +12,6 @@ public class Movement : MonoBehaviour
     public KeyCode interactionKey;
     [HideInInspector] public bool canMove;
     private Vector2 playerDirection;
-    private bool playerTryingToInteract;
     private Rigidbody2D rigidbody;
     private Vector3 oldposition;
     private PlayerInteractions playerInteractions;
@@ -37,7 +36,6 @@ public class Movement : MonoBehaviour
             if (Input.GetKey(backward)) playerDirection.y -= 1;
             if (Input.GetKeyDown(interactionKey))
             {
-                playerTryingToInteract = true;
                 playerInteractions.OnInteract();
             }
             rigidbody.velocity = playerDirection * GameConstants.MovementOffset;

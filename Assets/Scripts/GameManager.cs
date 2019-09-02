@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject player1;
     public GameObject player2;
+    public GameObject PickUPSpawner;
     private bool player1finished;
     private bool player2finished;
     // Start is called before the first frame update
@@ -21,7 +23,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void SetPlayerFinished(PlayerInteractions playerInteractions)
+    public void SetPlayerFinished(PlayerInteractions playerInteractions)
     {
         if(playerInteractions.player==GameConstants.Players.Player1)
         {
@@ -33,7 +35,7 @@ public class GameManager : MonoBehaviour
         }
         if(player1finished==true && player2finished==true)
         {
-
+            SceneManager.LoadScene(1);
         }
     }
 

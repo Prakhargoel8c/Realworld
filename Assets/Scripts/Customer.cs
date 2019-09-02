@@ -50,7 +50,7 @@ public class Customer : MonoBehaviour
     void SetCombination()
     {
         playerwrongcombo = new int[2] { 0, 0 };
-        int noOfItems = UnityEngine.Random.Range(1, GameConstants.maxitems);
+        int noOfItems = UnityEngine.Random.Range(1, GameConstants.maxitems+1);
         CustomerTime = noOfItems * GameConstants.ItemTime;
         TimeLeft = CustomerTime;
         currentrate = GameConstants.NormalRate;
@@ -60,11 +60,11 @@ public class Customer : MonoBehaviour
         {
             if (combination.Length>0)
             {
-                combination += "," + GameConstants.vegetablenames[UnityEngine.Random.Range(0, GameConstants.vegetablenames.Length - 1)];
+                combination += "," + GameConstants.vegetablenames[UnityEngine.Random.Range(0, GameConstants.vegetablenames.Length)];
             }
             else
             {
-                combination =GameConstants.vegetablenames[UnityEngine.Random.Range(0, GameConstants.vegetablenames.Length - 1)];
+                combination =GameConstants.vegetablenames[UnityEngine.Random.Range(0, GameConstants.vegetablenames.Length)];
             }
         }
     }
@@ -112,7 +112,7 @@ public class Customer : MonoBehaviour
     {
         if(Bar.fillAmount>=0.3)
         {
-            //playerInteractions.SpawnPickUp();
+            gameManager.PickUPSpawner.GetComponent<PickUPSpawner>().SpawnPickUp(playerInteractions);
         }
         StartCoroutine(Wait());
         playerInteractions.GetUI.AddScore(GameConstants.correctcomboScore);

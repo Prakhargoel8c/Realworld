@@ -10,14 +10,14 @@ public class PlayerInteractions : MonoBehaviour
     public Color color;
     private Movement movement;
     private float interactionDistance;
-    private Collider2D[] collider2D;
+    private Collider2D[] colliderarray;
     private GameObject currentObject;
     private TextMesh vegetablesText;
     private TextMesh combinationText;
     private string[] vegetablenames;
     private GameObject chopindicator;
-    [HideInInspector]public GameObject UIObject;
-    public UI GetUI;
+    public GameObject UIObject;
+    [HideInInspector] public UI GetUI;
     [HideInInspector]public string combination
     {
         get
@@ -91,21 +91,29 @@ public class PlayerInteractions : MonoBehaviour
             {
                 currentObject.GetComponent<Customer>().OnInteract(gameObject);
             }
+            else if(currentObject.tag== "ScorePickup")
+            {
+                currentObject.GetComponent<ScorePowerUp>().OnInteract(gameObject);
+            }
+            else if(currentObject.tag== "TimePowerUp")
+            {
+                currentObject.GetComponent<TimePoweUp>().OnInteract(gameObject);
+            }
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         LayerMask mask = LayerMask.GetMask("Interactable");
-        collider2D = Physics2D.OverlapCircleAll(transform.position, interactionDistance,mask);
-        if (collider2D.Length > 0)
+        colliderarray = Physics2D.OverlapCircleAll(transform.position, interactionDistance,mask);
+        if (colliderarray.Length > 0)
         {
-            if (currentObject != collider2D[0])
+            if (currentObject != colliderarray[0])
             {
                 if (currentObject != null)
                 {
                     currentObject.GetComponent<Outline>().effectDistance = Vector2.zero;
                 }
-                currentObject = collider2D[0].gameObject;
+                currentObject = colliderarray[0].gameObject;
                 currentObject.GetComponent<Outline>().effectColor = color;
                 currentObject.GetComponent<Outline>().effectDistance = new Vector2(7, 7);
             }
@@ -177,6 +185,7 @@ public class PlayerInteractions : MonoBehaviour
     public void StopPlayer()
     {
         movement.canMove = false;
+        gameManager.SetPlayerFinished(this);
 
     }
     IEnumerator Wait()

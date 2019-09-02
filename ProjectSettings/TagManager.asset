@@ -10,6 +10,10 @@ TagManager:
   - Plate
   - Dustbin
   - Customer
+  - PickUp
+  - Canvas
+  - ScorePickup
+  - TimePowerUp
   layers:
   - Default
   - TransparentFX

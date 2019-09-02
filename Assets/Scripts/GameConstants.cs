@@ -26,4 +26,6 @@ public class GameConstants
     public static int angrycustomerleave = -40;
     public static int vegetabletrash = -5;
     public static int combinationtrash = -10;
+    public static int ScorePickUp = 40;
+    public static int TimePickup = 30;
 }
