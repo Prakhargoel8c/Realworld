@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -39,6 +37,11 @@ public class GameManager : MonoBehaviour
             GameConstants.Player1Score = player1.GetComponent<PlayerInteractions>().GetUI.CurrentScore;
             GameConstants.Player2Score = player2.GetComponent<PlayerInteractions>().GetUI.CurrentScore;
         }
+    }
+    public void EndGame()
+    {
+        SetPlayerFinished(player1.GetComponent<PlayerInteractions>());
+        SetPlayerFinished(player2.GetComponent<PlayerInteractions>());
     }
 
 }

@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\ChoppingBoard.cs" />
     <Compile Include="Assets\Scripts\Customer.cs" />
     <Compile Include="Assets\Scripts\Dustbin.cs" />
+    <Compile Include="Assets\Scripts\EndScript.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
