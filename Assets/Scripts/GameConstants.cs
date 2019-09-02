@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class GameConstants
 {
-    public static  int Player1Score=10000;
-    public static int Player2Score=5000;
+    public static  int Player1Score;
+    public static int Player2Score;
     public static float activationdistance = 0.62f;
     public static float MovementOffset=2f;
     public static float choptime=2f;
@@ -31,5 +31,6 @@ public class GameConstants
     public static int ScorePickUp = 40;
     public static int TimePickup = 30;
     public static float HappyPercent = 0.7f;
-    
+    public static float SpeedPickUpTime = 5f;
+    public static float IncreasedSpeed = 4f;
 }

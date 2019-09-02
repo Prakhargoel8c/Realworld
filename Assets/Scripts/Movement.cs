@@ -15,12 +15,14 @@ public class Movement : MonoBehaviour
     private Rigidbody2D rigidbody;
     private Vector3 oldposition;
     private PlayerInteractions playerInteractions;
+    [HideInInspector] public float speed;
     // Start is called before the first frame update
     void Start()
     {
         canMove = true;
         rigidbody = gameObject.GetComponent<Rigidbody2D>();
         playerInteractions = gameObject.GetComponent<PlayerInteractions>();
+        speed = GameConstants.MovementOffset;
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class Movement : MonoBehaviour
             {
                 playerInteractions.OnInteract();
             }
-            rigidbody.velocity = playerDirection * GameConstants.MovementOffset;
+            rigidbody.velocity = playerDirection * speed;
         }
     }
     

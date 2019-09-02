@@ -94,6 +94,10 @@ public class PlayerInteractions : MonoBehaviour
             {
                 currentObject.GetComponent<TimePoweUp>().OnInteract(gameObject);
             }
+            else if(currentObject.tag== "SpeedPickUp")
+            {
+                currentObject.GetComponent<SpeedPickUp>().OnInteract(gameObject);
+            }
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -190,5 +194,15 @@ public class PlayerInteractions : MonoBehaviour
         yield return new WaitForSeconds(GameConstants.choptime);
         movement.canMove = true;
         chopindicator.SetActive(false);
+    }
+    public void IncreaseSpeed()
+    {
+        StartCoroutine(Speed());
+    }
+    IEnumerator Speed()
+    {
+        movement.speed = GameConstants.IncreasedSpeed;
+        yield return new WaitForSeconds(GameConstants.SpeedPickUpTime);
+        movement.speed = GameConstants.MovementOffset;
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\ResetScene.cs" />
     <Compile Include="Assets\Scripts\ScorePowerUp.cs" />
     <Compile Include="Assets\Scripts\ShowScores.cs" />
+    <Compile Include="Assets\Scripts\SpeedPickUp.cs" />
     <Compile Include="Assets\Scripts\TimePoweUp.cs" />
     <Compile Include="Assets\Scripts\UI.cs" />
     <Compile Include="Assets\Scripts\VegetableName.cs" />
