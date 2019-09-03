@@ -4,6 +4,7 @@ public class GameConstants
 {
     public static  int Player1Score;
     public static int Player2Score;
+    public static float chopindicatorspeed = -200;
     public static float activationdistance = 0.62f;
     public static float MovementOffset=2f;
     public static float choptime=2f;

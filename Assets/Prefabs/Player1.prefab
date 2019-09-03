@@ -323,6 +323,7 @@ MonoBehaviour:
   right: 100
   interactionKey: 101
   canMove: 0
+  speed: 0
 --- !u!114 &190722645625757673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +338,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   color: {r: 0.05233179, g: 0.3406598, b: 0.5283019, a: 1}
-  interactionDistance: 0.62
   UIObject: {fileID: 0}
   GetUI: {fileID: 0}
 --- !u!1 &8779540336378609619
@@ -350,6 +350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6691311428922025808}
   - component: {fileID: 2482765559867870309}
+  - component: {fileID: 3681027712028020434}
   m_Layer: 0
   m_Name: Chopping Indicator
   m_TagString: Untagged
@@ -419,3 +420,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3681027712028020434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779540336378609619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ed77e49de426d47b8d8860c44f3586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

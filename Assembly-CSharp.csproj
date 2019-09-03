@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Plate.cs" />
     <Compile Include="Assets\Scripts\PlayerInteractions.cs" />
     <Compile Include="Assets\Scripts\ResetScene.cs" />
+    <Compile Include="Assets\Scripts\RotateChopIndicator.cs" />
     <Compile Include="Assets\Scripts\ScorePowerUp.cs" />
     <Compile Include="Assets\Scripts\ShowScores.cs" />
     <Compile Include="Assets\Scripts\SpeedPickUp.cs" />

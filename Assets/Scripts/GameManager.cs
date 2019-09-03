@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     {
         player1finished = false;
         player2finished = false;
+        GameConstants.Player1Score = 0;
+        GameConstants.Player2Score = 0;
     }
 
     // Update is called once per frame
