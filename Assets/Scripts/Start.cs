@@ -1,0 +1,14 @@
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class Start : MonoBehaviour
+{
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void Instructions()
+    {
+        SceneManager.LoadScene(3);
+    }
+}
